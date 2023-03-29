@@ -1,0 +1,137 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "pizzaria",
+    "dateExported": "2023-03-29T23:43:41.067Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "categoria",
+            "containerId": "",
+            "created": "2023-03-29T23:34:46.227Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "3b729b08-ff70-40e2-acdb-51891f2a9691",
+            "colId": "fa7142ee-be53-40d8-8f2d-abdc6a96524c",
+            "containerId": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "findAll",
+            "url": "{{baseURL}}{{port}}/categoria/findAll",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-03-29T23:34:46.227Z",
+            "modified": "2023-03-29T23:35:16.376Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "offset",
+                    "value": "0",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "042d3ac3-236e-4f27-8ac9-deed0771e9c9",
+            "colId": "fa7142ee-be53-40d8-8f2d-abdc6a96524c",
+            "containerId": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "findById",
+            "url": "{{baseURL}}{{port}}/categoria/findById/6424ccaf3a4ea406264e2b71",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-03-29T23:34:46.228Z",
+            "modified": "2023-03-29T23:42:00.970Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "68b152f1-ffa3-4804-a18e-74ec4d434828",
+            "colId": "fa7142ee-be53-40d8-8f2d-abdc6a96524c",
+            "containerId": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "create",
+            "url": "{{baseURL}}{{port}}/categoria/create",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-03-29T23:34:46.229Z",
+            "modified": "2023-03-29T23:43:14.046Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Sobremesas\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "33a99ed8-7258-4200-b036-f53ba2e192aa",
+            "colId": "fa7142ee-be53-40d8-8f2d-abdc6a96524c",
+            "containerId": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "update",
+            "url": "{{baseURL}}{{port}}/categoria/update/6424ccaf3a4ea406264e2b71",
+            "method": "PUT",
+            "sortNum": 110000,
+            "created": "2023-03-29T23:34:46.230Z",
+            "modified": "2023-03-29T23:42:40.220Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "{ \"nome\": \"Heinneken\", \"descricao\": \"Cerveja Heinneken 600ml\", \"precoUnitario\": 9.99, \"imagem\": \"foto_produto01.jpg\", \"codigoBarra\": 1234567890123 }",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nome\": \"Sobremesas\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "74fe10c0-1cd7-4829-93d4-ffd60e510354",
+            "colId": "fa7142ee-be53-40d8-8f2d-abdc6a96524c",
+            "containerId": "4fc5863f-880f-41b3-817d-abec1b87cfc1",
+            "name": "delete",
+            "url": "{{baseURL}}{{port}}/categoria/remove/6424ccaf3a4ea406264e2b71",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2023-03-29T23:34:46.231Z",
+            "modified": "2023-03-29T23:43:00.595Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        }
+    ]
+}

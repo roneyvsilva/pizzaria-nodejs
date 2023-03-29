@@ -1,0 +1,20 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "pizzaria",
+    "dateExported": "2023-03-29T23:43:25.175Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "baseURL",
+            "value": "http://localhost:"
+        },
+        {
+            "name": "token",
+            "value": ""
+        },
+        {
+            "name": "port",
+            "value": "3000"
+        }
+    ]
+}
