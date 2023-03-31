@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
     limit = Number(limit);
     offset = Number(offset);
 
-    !limit ? limit = 3 : null;
+    !limit ? limit = 10 : null;
     !offset ? offset = 0 : null;
 
     req.query.limit = limit;
