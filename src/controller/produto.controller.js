@@ -62,7 +62,7 @@ const removeCategoriaProdutoController = async (req, res) => {
     try {
         const produto = await produtoService.removeCategoriaProdutoService(req.params.id, req.body);
         if (produto.value != null) {
-            res.status(200).send({ message: `Categoria removida do produto com sucesso.` });
+            res.status(200).send(produto.value);
         } else {
             res.status(404).send({ message: `Produto não encontrado. Categoria não removida.` });
         }
