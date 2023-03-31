@@ -282,7 +282,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#components/schemas/Usuario"
+                                    "$ref": "#components/schemas/Categoria"
                                 }
                             }
                         }
@@ -683,7 +683,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#components/schemas/Usuario"
+                                    "$ref": "#components/schemas/Produto"
                                 }
                             }
                         }
@@ -959,7 +959,7 @@
                             "application/json": {
                                 "schema": {
                                     "type": "object",
-                                    "$ref": "#components/schemas/Usuario"
+                                    "$ref": "#components/schemas/Produto"
                                 }
                             }
                         }
