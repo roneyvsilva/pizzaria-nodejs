@@ -16,7 +16,7 @@ const UsuarioSchema = new mongoose.Schema({
     }],
     createAt: { type: Date, required: true, default: Date.now() },
     produtosFavoritos: [{
-        _id: { type: mongoose.Schema.Types.ObjectId, unique: true, ref: "produtos" },
+        _id: { type: mongoose.Schema.Types.ObjectId, /* unique: true, */ ref: "produtos" },
         createAt: { type: Date, default: Date.now() }
     }],
     admin: { type: Boolean, required: true, default: false }
