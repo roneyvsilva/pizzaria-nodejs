@@ -14,7 +14,7 @@ router.post("/addCategoria/:id", authMiddleware, validaIdParams, validaIdBody, p
 router.put("/update/:id", authMiddleware, validaIdParams, validaProduto, produtoController.updateProductController);
 //rotas DELETE
 router.delete("/remove/:id", authMiddleware, validaIdParams, produtoController.deleteProductController);
-router.delete("/removeCategoria/:id", authMiddleware, validaIdParams, produtoController.removeCategoriaProdutoController);
+router.delete("/removeCategoria/:id", authMiddleware, validaIdParams, validaIdBody, produtoController.removeCategoriaProdutoController);
 
 module.exports = router;
 
