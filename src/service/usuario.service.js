@@ -31,7 +31,7 @@ const addUserAddressService = (id, endereco) => {
             }
         },
         {
-            rawResult: true
+            new: true
         }
     );
 }
@@ -49,7 +49,7 @@ const removeUserAddressService = (id, enderecoId) => {
             }
         },
         {
-            rawResult: true
+            new: true
         }
     );
 }
@@ -67,7 +67,7 @@ const addUserFavProductService = (id, produto) => {
             }
         },
         {
-            rawResult: true
+            new: true
         }
     );
 }
@@ -85,7 +85,7 @@ const removeUserFavProductService = (id, produto) => {
             }
         },
         {
-            rawResult: true
+            new: true
         }
     );
 }
