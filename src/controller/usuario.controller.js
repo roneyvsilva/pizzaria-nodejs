@@ -72,7 +72,7 @@ const deleteUserController = async (req, res) => {
 const addUserAddressController = async (req, res) => {
     try {
         const retorno = await usuarioService.addUserAddressService(req.params.id, req.body);
-        if (retorno.value != null) {
+        if (retorno) {
             res.status(201).send(retorno);
         } else {
             res.status(400).send({ message: `Algo de errado com o endereço. Endereço não adicionado.` });
@@ -87,14 +87,14 @@ const removeUserAddressController = async (req, res) => {
     try {
         const retorno = await usuarioService.removeUserAddressService(req.body.id, req.body.enderecoId);
         let encontrou = false;
-
-        retorno.value.enderecos.map((valor, chave) => {
+        console.log(retorno);
+        retorno.enderecos.map((valor, chave) => {
             if (valor._id == req.body.enderecoId) {
                 encontrou = true;
             }
         });
 
-        if (encontrou) {
+        if (!encontrou) {
             res.status(200).send(retorno);
         } else {
             res.status(400).send({ message: `Algo de errado com o endereço. Endereço não removido.` });
@@ -108,7 +108,7 @@ const removeUserAddressController = async (req, res) => {
 const addUserFavProductController = async (req, res) => {
     try {
         const retorno = await usuarioService.addUserFavProductService(req.params.id, req.body);
-        if (retorno.value != null) {
+        if (retorno) {
             res.status(201).send(retorno);
         } else {
             res.status(400).send({ message: `Algo de errado com o produto favorito. Produto favorito não adicionado.` });
@@ -123,7 +123,7 @@ const addUserFavProductController = async (req, res) => {
 const removeUserFavProductController = async (req, res) => {
     try {
         const retorno = await usuarioService.removeUserFavProductService(req.params.id, req.body);
-        if (retorno.value != null) {
+        if (retorno) {
             res.status(200).send(retorno);
         } else {
             res.status(400).send({ message: `Algo de errado com o produto favorito. Produto favorito não removido.` });
