@@ -5,6 +5,7 @@ const cors = require("cors");
 const connectDB = require("./src/database/database"); // arquivo de conexão com o banco de dados
 const categoriaRouter = require("./src/router/categoria.router"); // arquivo de rotas da categoria
 const produtoRouter = require("./src/router/produto.router"); // arquivo de rotas do produto
+const usuarioRouter = require("./src/router/usuario.router"); // arquivo de rotas do usuário
 const docsRouter = require("./src/router/docs.router"); // arquivo de rotas de docs
 const app = express();
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 });
 app.use("/categoria", categoriaRouter); // chamando as rotas da categoria
 app.use("/produto", produtoRouter); // chamando as rotas do produto
+app.use("/usuario", usuarioRouter); // chamando as rotas do usuário
 app.use("/docs", docsRouter); // chamando as rotas da documentação
 
 app.listen(process.env.PORT, () => {

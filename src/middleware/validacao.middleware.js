@@ -35,6 +35,74 @@ const validaProduto = (req, res, next) => {
     return next();
 }
 
+const validaUsuario = (req, res, next) => {
+    if (!req.body.nome) {
+        return res.status(400).send({ message: `Nome não foi informado.` });
+    }
+    if (!req.body.email) {
+        return res.status(400).send({ message: `Email não foi informado.` });
+    }
+    if (!req.body.senha) {
+        return res.status(400).send({ message: `Senha não foi informada.` });
+    }
+    if (!req.body.imagem) {
+        return res.status(400).send({ message: `Imagem não foi informada.` });
+    }
+    if (req.body.admin == undefined) {
+        return res.status(400).send({ message: `Campo 'admin' não foi informado.` });
+    }
+
+    return next();
+}
+
+const validaEndereco = (req, res, next) => {
+    let erros = [];
+
+    if (req.body.enderecos != undefined) {
+        req.body.enderecos.map((value, key) => {
+            if (!value.rua) {
+                erros.push(`'[${key + 1}] - rua'`);
+            }
+            if (!value.numero) {
+                erros.push(`'[${key + 1}] - numero'`);
+            }
+            if (!value.cep) {
+                erros.push(`'[${key + 1}] - cep'`);
+            }
+        });
+    }
+
+    if (erros.length > 0) {
+        return res.status(400).send({ message: `O(s) campo(s) [${erros}] precisa(m) ser preenchido(s).` });
+    }
+
+    return next();
+}
+
+const validaProdutoRef = (req, res, next) => {
+    let erros = [];
+
+    if (req.body.produtosFavoritos != undefined) {
+        req.body.produtosFavoritos.map((value, key) => {
+            if (!value._id) {
+                erros.push(`'[${key + 1}] - _id'`);
+            } else {
+                if (!ObjectId.isValid(value._id)) {
+                    erros.push(`'[${key + 1}] - _id (tipo inválido)'`);
+                }
+            }
+            if (!value.quantidade) {
+                erros.push(`'[${key + 1}] - quantidade'`);
+            }
+        });
+    }
+    if (erros.length > 0) {
+        return res.status(400).send({ message: `O(s) campo(s) [${erros}] precisa(m) ser preenchido(s).` });
+    }
+
+    return next();
+}
+
 const validaIdBody = (req, res, next) => {
     if (!ObjectId.isValid(req.body._id)) {
         return res.status(400).send({ message: `O ID não possui os padrões necessários.` });
@@ -54,6 +122,9 @@ const validaIdParams = (req, res, next) => {
 module.exports = {
     validaCategoria,
     validaProduto,
+    validaUsuario,
+    validaEndereco,
+    validaProdutoRef,
     validaIdBody,
     validaIdParams
 };
