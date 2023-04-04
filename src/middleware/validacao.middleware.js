@@ -117,7 +117,20 @@ const validaIdParams = (req, res, next) => {
     return next();
 }
 
+const validaLogin = (req, res, next) => {
+    let erros = [];
+    if (!req.body.email) {
+        erros.push("email");
+    }
+    if (!req.body.senha) {
+        erros.push("senha");
+    }
 
+    if (erros.length > 0) {
+        return res.status(400).send({ message: `O(s) campo(s) [${erros}] precisa(m) ser preenchido(s).` });
+    }
+    return next();
+}
 
 module.exports = {
     validaCategoria,
@@ -126,5 +139,6 @@ module.exports = {
     validaEndereco,
     validaProdutoRef,
     validaIdBody,
-    validaIdParams
+    validaIdParams,
+    validaLogin
 };

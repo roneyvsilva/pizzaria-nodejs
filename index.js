@@ -7,6 +7,8 @@ const categoriaRouter = require("./src/router/categoria.router"); // arquivo de 
 const produtoRouter = require("./src/router/produto.router"); // arquivo de rotas do produto
 const usuarioRouter = require("./src/router/usuario.router"); // arquivo de rotas do usuário
 const docsRouter = require("./src/router/docs.router"); // arquivo de rotas de docs
+const authRouter = require("./src/router/auth.router"); // arquivo de rotas de autenticação
+
 const app = express();
 
 
@@ -27,6 +29,7 @@ app.use("/categoria", categoriaRouter); // chamando as rotas da categoria
 app.use("/produto", produtoRouter); // chamando as rotas do produto
 app.use("/usuario", usuarioRouter); // chamando as rotas do usuário
 app.use("/docs", docsRouter); // chamando as rotas da documentação
+app.use("/auth", authRouter); // chamando as rotas de autenticação
 
 app.listen(process.env.PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
