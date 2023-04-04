@@ -87,7 +87,6 @@ const removeUserAddressController = async (req, res) => {
     try {
         const retorno = await usuarioService.removeUserAddressService(req.body.id, req.body.enderecoId);
         let encontrou = false;
-        console.log(retorno);
         retorno.enderecos.map((valor, chave) => {
             if (valor._id == req.body.enderecoId) {
                 encontrou = true;
