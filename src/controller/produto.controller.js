@@ -34,8 +34,7 @@ const findAllProductController = async (req, res) => {
 const createProductController = async (req, res) => {
     try {
         const body = {
-            ...req.body,
-            //userId: req.userId,            
+            ...req.body
         }
         return res.status(201).send(await produtoService.createProductService(body));
     } catch (e) {
