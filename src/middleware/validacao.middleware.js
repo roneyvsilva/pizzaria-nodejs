@@ -132,6 +132,22 @@ const validaLogin = (req, res, next) => {
     return next();
 }
 
+const validaCarrinho = (req, res, next) => {
+
+    let erros = [];
+    if (!req.body.precoTotal) {
+        erros.push("precoTotal");
+    }
+    if (!req.body.frete) {
+        erros.push("frete");
+    }
+
+    if (erros.length > 0) {
+        return res.status(400).send({ message: `O(s) campo(s) [${erros}] precisa(m) ser preenchido(s).` });
+    }
+    return next();
+}
+
 module.exports = {
     validaCategoria,
     validaProduto,
@@ -140,5 +156,6 @@ module.exports = {
     validaProdutoRef,
     validaIdBody,
     validaIdParams,
-    validaLogin
+    validaLogin,
+    validaCarrinho
 };

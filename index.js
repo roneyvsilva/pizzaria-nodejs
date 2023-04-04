@@ -8,6 +8,7 @@ const produtoRouter = require("./src/router/produto.router"); // arquivo de rota
 const usuarioRouter = require("./src/router/usuario.router"); // arquivo de rotas do usuário
 const docsRouter = require("./src/router/docs.router"); // arquivo de rotas de docs
 const authRouter = require("./src/router/auth.router"); // arquivo de rotas de autenticação
+const carrinhoRouter = require("./src/router/carrinho.router"); // arquivo de rotas do carrinho
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use("/produto", produtoRouter); // chamando as rotas do produto
 app.use("/usuario", usuarioRouter); // chamando as rotas do usuário
 app.use("/docs", docsRouter); // chamando as rotas da documentação
 app.use("/auth", authRouter); // chamando as rotas de autenticação
+app.use("/carrinho", carrinhoRouter); // chamando as rotas do carrinho
 
 app.listen(process.env.PORT, () => {
     console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
