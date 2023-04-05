@@ -23,7 +23,7 @@ const findAllProductController = async (req, res) => {
         if (retorno.length > 0) {
             return res.status(200).send(retorno);
         } else {
-            return res.status(404).send({ message: `Produto não encontrado.` });
+            return res.status(404).send({ message: `Nenhum Produto encontrado.` });
         }
     } catch (e) {
         console.log(`Erro: ${e.message}`);
