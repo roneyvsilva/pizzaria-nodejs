@@ -980,7 +980,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum Produto encontrato",
+                        "description": "Not found. Nenhum Produto encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1071,7 +1071,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1153,7 +1153,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1240,8 +1240,8 @@
                         "bearerAuth": []
                     }
                 ],
-                "summary": "Lista o usuário da API com o Id informado",
-                "description": "Rota responsável por localizar um usuário da nossa API com o Id informado",
+                "summary": "Atualiza o usuário da API com o Id informado",
+                "description": "Rota responsável por atualizar um usuário da nossa API com o Id informado",
                 "tags": [
                     "Usuario"
                 ],
@@ -1294,7 +1294,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1333,7 +1333,7 @@
                         "bearerAuth": []
                     }
                 ],
-                "summary": "Lista o usuário da API com o Id informado",
+                "summary": "Deleta o usuário da API com o Id informado",
                 "description": "Rota responsável por localizar um usuário da nossa API com o Id informado",
                 "tags": [
                     "Usuario"
@@ -1376,7 +1376,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1469,7 +1469,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1559,7 +1559,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1656,7 +1656,7 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1753,7 +1753,602 @@
                         }
                     },
                     "404": {
-                        "description": "Not found. Nenhum usuário encontrato",
+                        "description": "Not found. Nenhum usuário encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/findAll": {
+            "get": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Lista todos carrinhos da API",
+                "description": "Rota responsável por listar todos os carrinhos da nossa API",
+                "tags": [
+                    "Carrinho"
+                ],
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok. Execução com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "$ref": "#components/schemas/Carrinho"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Nenhum carrinho encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/findById/{id}": {
+            "get": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Lista o carrinho da API com o Id informado",
+                "description": "Rota responsável por localizar um carrinho da nossa API com o Id informado",
+                "tags": [
+                    "Carrinho"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": "true",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok. Execução com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Carrinho não encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/create": {
+            "post": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Cria um novo carrinho",
+                "description": "Rota responsável por criar um novo carrinho com os dados passados no endpoint",
+                "tags": [
+                    "Carrinho"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#components/schemas/Carrinho"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Retorna o objeto criado no banco de dados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/update/{id}": {
+            "put": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Atualiza o carrinho da API com o Id informado",
+                "description": "Rota responsável por atualizar um carrinho da nossa API com o Id informado",
+                "tags": [
+                    "Carrinho"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "$ref": "#components/schemas/Carrinho"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": "true",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna o objeto atualizado no banco de dados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Nenhum carrinho encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/remove/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Exclui o carrinho da API com o Id informado",
+                "description": "Rota responsável por excluir um carrinho da nossa API com o Id informado",
+                "tags": [
+                    "Carrinho"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": "true",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna o objeto deletado do banco de dados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Nenhum carrinho encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/addProduto/{id}": {
+            "post": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Adiciona produto ao carrinho da API com o Id informado",
+                "description": "Rota responsável por adicionar um produto ao carrinho da nossa API com o Id informado",
+                "tags": [
+                    "Carrinho"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "_id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": "true",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Retorna o objeto atualizado no banco de dados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Nenhum carrinho encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error. Algo de errado aconteceu no servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carrinho/removeProduto/{id}": {
+            "delete": {
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ],
+                "summary": "Remove produto do carrinho da API com o Id informado",
+                "description": "Rota responsável por remover um produto do carrinho da nossa API com o Id informado",
+                "tags": [
+                    "Carrinho"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "_id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": "true",
+                        "in": "path",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retorna o objeto atualizado no banco de dados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#components/schemas/Carrinho"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized. Erro de autenticação. Problema com o token",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not found. Nenhum carrinho encontrado",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -1922,6 +2517,36 @@
                         "createdAt": {
                             "type": "string"
                         }
+                    }
+                }
+            },
+            "Carrinho": {
+                "type": "object",
+                "properties": {
+                    "produtos": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "_id": {
+                                    "type": "string"
+                                },
+                                "quantidade": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "precoTotal": {
+                        "type": "number"
+                    },
+                    "frete": {
+                        "type": "number"
+                    },
+                    "userId": {
+                        "type": "string"
                     }
                 }
             }
