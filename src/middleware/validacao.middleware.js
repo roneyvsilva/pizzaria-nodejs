@@ -179,5 +179,6 @@ module.exports = {
     validaIdBody,
     validaIdParams,
     validaLogin,
-    validaCarrinho
+    validaCarrinho,
+    validaPedido
 };
