@@ -17,6 +17,6 @@ router.put("/update/:id", authMiddleware, validaIdParams, validaEndereco, valida
 //rotas DELETE
 router.delete("/remove/:id", authMiddleware, validaIdParams, usuarioController.deleteUserController);
 router.delete("/removeAddress", authMiddleware, usuarioController.removeUserAddressController);
-router.delete("/removeFavProduct/:id", authMiddleware, validaIdParams, usuarioController.removeUserFavProductController);
+router.delete("/removeFavProduct/:id", authMiddleware, validaIdParams, validaIdBody, usuarioController.removeUserFavProductController);
 
 module.exports = router;
