@@ -148,6 +148,28 @@ const validaCarrinho = (req, res, next) => {
     return next();
 }
 
+const validaPedido = (req, res, next) => {
+
+    let erros = [];
+    if (!req.body.precoTotal) {
+        erros.push("precoTotal");
+    }
+    if (!req.body.frete) {
+        erros.push("frete");
+    }
+    if (req.body.concluido == undefined) {
+        erros.push("userId");
+    }
+    if (req.body.enderecoId == undefined) {
+        erros.push("enderecoId");
+    }
+
+    if (erros.length > 0) {
+        return res.status(400).send({ message: `O(s) campo(s) [${erros}] precisa(m) ser preenchido(s).` });
+    }
+    return next();
+}
+
 module.exports = {
     validaCategoria,
     validaProduto,
