@@ -44,7 +44,6 @@ const removeProdutoCarrinhoService = (id, produto) => {
             }
         },
         {
-            rawResult: true,
             new: true
         }
     );
