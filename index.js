@@ -25,7 +25,7 @@ app.use(cors(
 connectDB(); // conectando com o banco de dados
 
 app.get("/", (req, res) => {
-    res.send({ message: "Bem vindo a Pizzaria..." });
+    res.send(`Bem vindo a Pizzaria...<p>Documentação da API em: <a href="/docs/api-docs">http://localhost:${process.env.PORT}/docs/api-docs</a>`);
 });
 app.use("/categoria", categoriaRouter); // chamando as rotas da categoria
 app.use("/produto", produtoRouter); // chamando as rotas do produto
