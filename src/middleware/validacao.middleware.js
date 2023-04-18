@@ -48,9 +48,6 @@ const validaUsuario = (req, res, next) => {
     if (!req.body.imagem) {
         return res.status(400).send({ message: `Imagem não foi informada.` });
     }
-    if (req.body.admin == undefined) {
-        return res.status(400).send({ message: `Campo 'admin' não foi informado.` });
-    }
 
     return next();
 }
