@@ -18,7 +18,7 @@ const loginController = async (req, res) => {
 
     const token = authService.generateToken(usuario.id);
 
-    res.status(200).send({ email, token });
+    res.status(200).send({ id: usuario.id, email, token });
 }
 
 module.exports = { loginController };
